@@ -16,14 +16,19 @@
   <div class="content">
     <!-- Projects section (default) -->
     <div id="projects-section">
-      <h1>Projects</h1>
-      <p>Welcome to the Projects section. (You can list project cards here later.)</p>
+      <div class="project-header">
+        <h1>Projects</h1>
+        <button id="addProjectBtn">Add Project</button>
+      </div>
+      <div id="projectList" class="project-cards">
+        <!-- <p>Welcome to the Projects section.</p> -->
+      </div>
     </div>
 
     <!-- Team section (hidden by default) -->
     <div id="team-section" style="display: none;">
       <h1>Our Team</h1>
-      
+
       <h2>Leads</h2>
       <div class="profile-cards">
         <div class="card lead">
@@ -53,6 +58,20 @@
       </div>
     </div>
   </div>
+
+  <!-- Modal for adding project -->
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Add New Project</h2>
+      <form id="projectForm">
+        <input type="text" id="projectName" placeholder="Project Name" required>
+        <textarea id="projectDescription" placeholder="Project Description" required></textarea>
+        <button type="submit">Add Project</button>
+      </form>
+    </div>
+  </div>
+
   <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
